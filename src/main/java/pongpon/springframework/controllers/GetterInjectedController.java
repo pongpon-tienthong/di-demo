@@ -1,16 +1,18 @@
 package pongpon.springframework.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import pongpon.springframework.services.GreetingService;
+import pongpon.springframework.services.GreetingServiceInterface;
 
 @Controller
 public class GetterInjectedController {
 
-    private GreetingService greetingService;
+    private GreetingServiceInterface greetingService;
 
     @Autowired
-    public void setGreetingService(GreetingService greetingService) {
+    public void setGreetingService(@Qualifier("getterGreetingService") GreetingServiceInterface greetingService) {
         this.greetingService = greetingService;
     }
 
