@@ -9,7 +9,7 @@ import pongpon.springframework.services.GreetingService;
 public class PropertyInjectedController {
 
     @Autowired
-    @Qualifier("propertyGreetingServiceImpl")
+    @Qualifier("propertyGreetingService")
     public GreetingService greetingService;
 
     public String sayHello() {
