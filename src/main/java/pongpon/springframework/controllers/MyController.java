@@ -2,15 +2,15 @@ package pongpon.springframework.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import pongpon.springframework.services.GreetingServiceInterface;
+import pongpon.springframework.services.GreetingService;
 
 @Controller
 public class MyController {
 
-    private GreetingServiceInterface greetingService;
+    private GreetingService greetingService;
 
     @Autowired
-    public MyController(GreetingServiceInterface greetingService) {
+    public MyController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

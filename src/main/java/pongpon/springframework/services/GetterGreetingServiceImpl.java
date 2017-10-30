@@ -3,10 +3,10 @@ package pongpon.springframework.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConstructorGreetingService implements GreetingServiceInterface {
+public class GetterGreetingServiceImpl implements GreetingService {
 
     @Override
     public String sayGreeting() {
-        return "Hello, I was injected by Constructor.";
+        return "Hello, I was injected by Getter.";
     }
 }

@@ -2,7 +2,7 @@ package pongpon.springframework.controllers;
 
 import org.junit.Before;
 import org.junit.Test;
-import pongpon.springframework.services.GreetingService;
+import pongpon.springframework.services.GreetingServiceImpl;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,11 +13,11 @@ public class GetterInjectedControlerTest {
     @Before
     public void setUp() {
         this.getterInjectedController = new GetterInjectedController();
-        this.getterInjectedController.setGreetingService(new GreetingService());
+        this.getterInjectedController.setGreetingService(new GreetingServiceImpl());
     }
 
     @Test
     public void testGreeting() {
-        assertEquals(GreetingService.HELLO_GURU, getterInjectedController.sayHello());
+        assertEquals(GreetingServiceImpl.HELLO_GURU, getterInjectedController.sayHello());
     }
 }
