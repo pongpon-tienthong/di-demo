@@ -7,6 +7,7 @@ import pongpon.springframework.controllers.ConstructorInjectedController;
 import pongpon.springframework.controllers.GetterInjectedController;
 import pongpon.springframework.controllers.MyController;
 import pongpon.springframework.controllers.PropertyInjectedController;
+import pongpon.springframework.fakes.FakeDataSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -15,9 +16,10 @@ public class DiDemoApplication {
         ApplicationContext context = SpringApplication.run(DiDemoApplication.class, args);
         MyController myController = (MyController) context.getBean("myController");
 
-        System.out.println(myController.hello());
-        System.out.println(context.getBean(PropertyInjectedController.class).sayHello());
-        System.out.println(context.getBean(GetterInjectedController.class).sayHello());
-        System.out.println(context.getBean(ConstructorInjectedController.class).sayHello());
+        FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
+
+        System.out.println(fakeDataSource.getUsername());
+        System.out.println(fakeDataSource.getPassword());
+        System.out.println(fakeDataSource.getDbUrl());
     }
 }
