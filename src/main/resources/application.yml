@@ -1,0 +1,4 @@
+jms:
+  username: jms
+  password: JMS Password
+  dburl: jms.com

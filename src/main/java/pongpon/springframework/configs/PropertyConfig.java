@@ -3,18 +3,11 @@ package pongpon.springframework.configs;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import pongpon.springframework.fakes.FakeDataSource;
 import pongpon.springframework.fakes.JmsFakeDataSource;
 
 @Configuration
-//@PropertySource("classpath:datasource.properties")
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfig {
 
     @Value("${pongpon.username}")
@@ -54,11 +47,5 @@ public class PropertyConfig {
         fakeDataSource.setDbUrl(this.jmsDbUrl);
 
         return fakeDataSource;
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
     }
 }
