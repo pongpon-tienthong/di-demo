@@ -8,6 +8,7 @@ import pongpon.springframework.controllers.GetterInjectedController;
 import pongpon.springframework.controllers.MyController;
 import pongpon.springframework.controllers.PropertyInjectedController;
 import pongpon.springframework.fakes.FakeDataSource;
+import pongpon.springframework.fakes.JmsFakeDataSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -17,9 +18,9 @@ public class DiDemoApplication {
         MyController myController = (MyController) context.getBean("myController");
 
         FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
+        JmsFakeDataSource jsmFakeDataSource = (JmsFakeDataSource) context.getBean(JmsFakeDataSource.class);
 
         System.out.println(fakeDataSource.getUsername());
-        System.out.println(fakeDataSource.getPassword());
-        System.out.println(fakeDataSource.getDbUrl());
+        System.out.println(jsmFakeDataSource.getUsername());
     }
 }
