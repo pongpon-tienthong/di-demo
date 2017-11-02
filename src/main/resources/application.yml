@@ -2,3 +2,10 @@ jms:
   username: jms
   password: JMS Password
   dburl: jms.com
+
+---
+spring:
+  profiles: th
+
+jms:
+  username: jms Thai
